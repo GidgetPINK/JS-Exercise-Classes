@@ -42,9 +42,30 @@ class Airplane {
   */
   
  class Person {
-    
+   constructor(name, age){
+    this.name = name;
+    this.age = age;
+    this.stomach = [];
+   }
+   eat(edible){
+     if(this.stomach.length < 10)
+     this.stomach.push(edible);
+   }
+
+   poop(){
+     return this.stomach = [];
+   }
+
+   toString(){
+     return `${this.name}, ${this.age}`;
+   }
   }
+
+  const lunchKidOne = new Person("Kylie", 6);
+  const lunchKidTwo = new Person("Ashton", 11);
+  const lunchKidThree = new Person("JuJu", 2);
   
+
   /*
     TASK 2
       - Write a Car class whose constructor initializes `model` and `milesPerGallon` from arguments.
@@ -60,7 +81,21 @@ class Airplane {
   */
   
  class Car {
-    
+    constructor(model, milesPerGallon){
+      this.model = model;
+      this.milesPerGallon = milesPerGallon;
+      this.tank = 0;
+      this.odometer = 0;
+    }
+
+    fill(gallons){
+      this.tank += gallons;
+    }
+
+    drive(distance){
+      if(distance > 0)
+      this.odometer += distance
+    }
   }
   
   /*
@@ -76,7 +111,14 @@ class Airplane {
           + {name} and {location} of course come from the instance's own properties.
   */
  class Lambdasian {
-    
+    constructor({name, age, location}){
+      this.name = name;
+      this.age = age;
+      this.location = location;
+    }
+    speak(){
+      return `Hello my name is ${this.name}, I am from ${this.location}`;
+    }
   }
   
   /*
@@ -94,7 +136,26 @@ class Airplane {
           + `grade` receives a `student` object and a `subject` string as arguments and returns '{student.name} receives a perfect score on {subject}'
   */
  class Instructor {
+  constructor({name, age, location, specialty, favLanguage, catchPhrase}){
+    this.name = name;
+    this.age = age;
+    this.location = location;
+    this.specialty = specialty;
+    this.favLanguage = favLanguage;
+    this.catchPhrase = catchPhrase;
+  }
 
+  speak(){
+
+  }
+
+  demo(){
+
+  }
+
+  grade(){
+
+  }
  }
   /*
     TASK 5
@@ -112,7 +173,30 @@ class Airplane {
           + `sprintChallenge` similar to PRAssignment but returns `student.name has begun sprint challenge on {subject}`
   */
  class Student {
-     
+     constructor({name, age, location, previousBackground, className, favSubjects}){
+       this.name = name;
+       this.age = age;
+       this.location = location;
+      this.previousBackground = previousBackground;
+      this.className = className;
+      this.favSubjects = favSubjects;
+     }
+
+     speak(){
+        
+     }
+
+     listSubjects(){
+
+     }
+
+     PRAssignment(){
+
+     }
+
+     sprintChallenge(){
+
+     }
  }
   
   /*
@@ -129,7 +213,36 @@ class Airplane {
           + `debugsCode` a method that takes in a student object and a subject and returns `{name} debugs {student.name}'s code on {subject}`
   */
  class ProjectManager {
-     
+     constructor({name, age, location, specialty, favLanguage, catchPhrase, gradClassName, favInstructor}){
+      this.name = name;
+      this.age = age;
+      this.location = location;
+      this.specialty = specialty;
+      this.favLanguage = favLanguage;
+      this.catchPhrase = catchPhrase;
+      this.gradClassName = gradClassName;
+      this.favInstructor = favInstructor;
+     }
+
+     speak(){
+
+     }
+
+     demo(){
+
+     }
+
+     grade(){
+
+     }
+
+     standUp() {
+
+     }
+
+     debugsCode(){
+       
+     }
  }
   /*
     STRETCH PROBLEM (no tests!)
