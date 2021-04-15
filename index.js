@@ -92,11 +92,20 @@ class Airplane {
       this.tank += gallons;
     }
 
-    drive(distance){
-      this.odometer += distance
-      
+    drive(distance) {
+      if(this.tank > 0) {
+        let milesUsed = this.tank * this.milesPerGallon;
+        if(distance >= milesUsed) {
+          this.tank = 0;
+          this.odometer += milesUsed;
+          return `I ran out of fuel at ${this.odometer} miles!`;
+        } else {
+          this.tank -= distance/this.milesPerGallon;
+          this.odometer += distance;
+        }
+      }
     }
-  }
+    
   
   /*
     TASK 3
