@@ -42,9 +42,30 @@ class Airplane {
   */
   
  class Person {
-    
+   constructor(name, age){
+    this.name = name;
+    this.age = age;
+    this.stomach = [];
+   }
+   eat(edible){
+     if(this.stomach.length < 10)
+     this.stomach.push(edible);
+   }
+
+   poop(){
+     return this.stomach = [];
+   }
+
+   toString(){
+     return `${this.name}, ${this.age}`;
+   }
   }
+
+  const lunchKidOne = new Person("Kylie", 6);
+  const lunchKidTwo = new Person("Ashton", 11);
+  const lunchKidThree = new Person("JuJu", 2);
   
+
   /*
     TASK 2
       - Write a Car class whose constructor initializes `model` and `milesPerGallon` from arguments.
@@ -60,8 +81,31 @@ class Airplane {
   */
   
  class Car {
+    constructor(model, milesPerGallon){
+      this.model = model;
+      this.milesPerGallon = milesPerGallon;
+      this.tank = 0;
+      this.odometer = 0;
+    }
+
+    fill(gallons){
+      this.tank += gallons;
+    }
+
+    drive(distance) {
+      if(this.tank > 0) {
+        let milesUsed = this.tank * this.milesPerGallon;
+        if(distance >= milesUsed) {
+          this.tank = 0;
+          this.odometer += milesUsed;
+          return `I ran out of fuel at ${this.odometer} miles!`;
+        } else {
+          this.tank -= distance/this.milesPerGallon;
+          this.odometer += distance;
+        }
+      }
+    }
     
-  }
   
   /*
     TASK 3
@@ -76,7 +120,14 @@ class Airplane {
           + {name} and {location} of course come from the instance's own properties.
   */
  class Lambdasian {
-    
+    constructor({name, age, location}){
+      this.name = name;
+      this.age = age;
+      this.location = location;
+    }
+    speak(){
+      return `Hello my name is ${this.name}, I am from ${this.location}`;
+    }
   }
   
   /*
@@ -94,7 +145,26 @@ class Airplane {
           + `grade` receives a `student` object and a `subject` string as arguments and returns '{student.name} receives a perfect score on {subject}'
   */
  class Instructor {
+  constructor({name, age, location, specialty, favLanguage, catchPhrase}){
+    this.name = name;
+    this.age = age;
+    this.location = location;
+    this.specialty = specialty;
+    this.favLanguage = favLanguage;
+    this.catchPhrase = catchPhrase;
+  }
 
+  speak(){
+    return `Hello my name is ${this.name}, I am from ${this.location}`;
+  }
+
+  demo(subject){
+    return `Today we are learning about ${subject} where subject is the param passed in.`
+  }
+
+  grade(student, subject){
+    return `${student.name} receives a perfect score on the ${subject}`;
+  }
  }
   /*
     TASK 5
@@ -112,7 +182,30 @@ class Airplane {
           + `sprintChallenge` similar to PRAssignment but returns `student.name has begun sprint challenge on {subject}`
   */
  class Student {
-     
+     constructor({name, age, location, previousBackground, className, favSubjects}){
+       this.name = name;
+       this.age = age;
+       this.location = location;
+      this.previousBackground = previousBackground;
+      this.className = className;
+      this.favSubjects = favSubjects;
+     }
+
+     speak(){
+      return `Hello my name is ${this.name}, I am from ${this.location}`;
+     }
+
+     listSubjects(){
+      return `Loving ${this.favSubjects}!`
+     }
+
+     PRAssignment(subject){
+      return `${this.name} has submitted a PR for ${subject}`;
+     }
+
+     sprintChallenge(subject){
+      return `${this.name} has begun sprint challenge on ${subject}`;
+     }
  }
   
   /*
@@ -129,7 +222,36 @@ class Airplane {
           + `debugsCode` a method that takes in a student object and a subject and returns `{name} debugs {student.name}'s code on {subject}`
   */
  class ProjectManager {
-     
+     constructor({name, age, location, specialty, favLanguage, catchPhrase, gradClassName, favInstructor}){
+      this.name = name;
+      this.age = age;
+      this.location = location;
+      this.specialty = specialty;
+      this.favLanguage = favLanguage;
+      this.catchPhrase = catchPhrase;
+      this.gradClassName = gradClassName;
+      this.favInstructor = favInstructor;
+     }
+
+     speak(){
+      return `Hello my name is ${this.name}, I am from ${this.location}`;
+     }
+
+     demo(subject){
+      return `Today we are learning about ${subject} where subject is the param passed in.`
+     }
+
+     grade(student, subject){
+      return `${student.name} receives a perfect score on the ${subject}`;
+     }
+
+     standUp(channel) {
+      return `${this.name} announces to ${channel}, @channel standy times!`;
+     }
+
+     debugsCode(student, subject){
+      return `${this.name} debugs ${student.name}'s code on ${subject}`;
+     }
  }
   /*
     STRETCH PROBLEM (no tests!)
