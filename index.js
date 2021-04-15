@@ -93,8 +93,8 @@ class Airplane {
     }
 
     drive(distance){
-      if(distance > 0)
       this.odometer += distance
+      
     }
   }
   
@@ -146,15 +146,15 @@ class Airplane {
   }
 
   speak(){
-
+    return `Hello my name is ${this.name}, I am from ${this.location}`;
   }
 
-  demo(){
-
+  demo(subject){
+    return `Today we are learning about ${subject} where subject is the param passed in.`
   }
 
-  grade(){
-
+  grade(student, subject){
+    return `${student.name} receives a perfect score on the ${subject}`;
   }
  }
   /*
@@ -183,19 +183,19 @@ class Airplane {
      }
 
      speak(){
-        
+      return `Hello my name is ${this.name}, I am from ${this.location}`;
      }
 
      listSubjects(){
-
+      return `Loving ${this.favSubjects}!`
      }
 
-     PRAssignment(){
-
+     PRAssignment(subject){
+      return `${this.name} has submitted a PR for ${subject}`;
      }
 
-     sprintChallenge(){
-
+     sprintChallenge(subject){
+      return `${this.name} has begun sprint challenge on ${subject}`;
      }
  }
   
@@ -225,23 +225,23 @@ class Airplane {
      }
 
      speak(){
-
+      return `Hello my name is ${this.name}, I am from ${this.location}`;
      }
 
-     demo(){
-
+     demo(subject){
+      return `Today we are learning about ${subject} where subject is the param passed in.`
      }
 
-     grade(){
-
+     grade(student, subject){
+      return `${student.name} receives a perfect score on the ${subject}`;
      }
 
-     standUp() {
-
+     standUp(channel) {
+      return `${this.name} announces to ${channel}, @channel standy times!`;
      }
 
-     debugsCode(){
-       
+     debugsCode(student, subject){
+      return `${this.name} debugs ${student.name}'s code on ${subject}`;
      }
  }
   /*
